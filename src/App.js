@@ -1,24 +1,34 @@
+
+
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Navbar from './components/Navbar'
+import FormField from './components/FormField';
+import CoolButton from './components/CoolButton';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+
+      <Navbar />
+
+      <FormField theLabel="Name" 
+      theTextForThePlaceHolder = "e.g Alex Smith"
+      whatType ="text"
+        />
+      <FormField  theLabel="Email"
+      theTextForThePlaceHolder = "e.g aSmith@gmail.com" 
+      whatType = "email"
+      />
+
+
+      <CoolButton isSmall={true} isDanger={true} isOutlined />
+      {/* if you just put the prop name its the same as saying = {true} */}
+      {/* so these 2 lines do the same thing */}
+      <CoolButton isRounded isDark isLarge />
+      
+
     </div>
   );
 }
